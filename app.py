@@ -12,7 +12,7 @@ ping_results = deque(maxlen=10)
 ping_lock = threading.Lock()
 
 def ping_server():
-    url = "http://localhost:7860"
+    url = "http://localhost:8300"
     while True:
         try:
             start_time = time.time()
@@ -52,7 +52,7 @@ def home():
 
 # Run Flask and ping in separate threads
 def run_flask():
-    app.run(host='0.0.0.0', port=7860)
+    app.run(host='0.0.0.0', port=8300)
 
 threading.Thread(target=ping_server, daemon=True).start()
 threading.Thread(target=run_flask, daemon=True).start()
