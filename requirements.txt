@@ -1,0 +1,6 @@
+telethon
+terabox-downloader
+aiohttp
+requests
+flask
+python-telegram-bot
